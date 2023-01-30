@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- *** Use Font Awesome icons in .NET MAUI by Unicode *** -->
+<!-- 1. copy and paste otf or ttf Files to Resources/Fonts/ folder -->
+<!-- 2. go to MauiProgram.cs an add fonts into .ConfigureFonts(fonts =>
+        { fonts.AddFonts("Filename.Filetype", "Aliasname"  -->
+<!-- 4. Using icons by Unicode 
+    serch any icon in https://fontawesome.com/search
+    copy Unicode and insert into ContentPage.Resources
+    like this
+    <x:String x:Key="smile">&#xYourUnicode;</x:String>
+    -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FontAwesomeIconByUnicode.FaByUnicode"
+             Title="FaByUnicode">
+    <ContentPage.Resources>
+        <x:String x:Key="smile">&#xf118;</x:String>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <!-- Image -->
+        <Image WidthRequest="80" HeightRequest="80">
+            <Image.Source>
+                <FontImageSource FontFamily="FAS" Glyph="{StaticResource smile}" Color="Blue" Size="50"/>
+            </Image.Source>
+        </Image>
+        <!-- ImageButton -->
+        <ImageButton HeightRequest="80" WidthRequest="80">
+            <ImageButton.Source>
+                <FontImageSource FontFamily="FAS" Glyph="{StaticResource smile}" Color="Yellow" Size="50"/>
+            </ImageButton.Source>
+        </ImageButton>
+        <!-- Label -->
+        <Label  WidthRequest="80" HeightRequest="80" FontFamily="FAS" Text="{StaticResource smile}" 
+                FontSize="80" TextColor="Red" HorizontalTextAlignment="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
